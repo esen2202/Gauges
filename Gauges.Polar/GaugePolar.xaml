@@ -5,18 +5,23 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Gauges.Polar"
              mc:Ignorable="d" 
+             x:Name="_this"
              d:DesignHeight="450" d:DesignWidth="450">
     <Viewbox x:Name="ViewBoxMain" Stretch="Uniform">
-        <Grid x:Name="GridMain" Width="200" Height="200">
-            <Ellipse x:Name="EllipseBase" >
+        <Grid x:Name="GridMain" Width="200" Height="200" Margin="5">
+            <Ellipse x:Name="EllipseBase">
                 <Ellipse.Fill>
                     <RadialGradientBrush>
-                        <GradientStop Color="#FFDADBAA"/>
-                        <GradientStop Color="#FFDFDFDF"/>
+                        <GradientStop Color="White"/>
+                        <GradientStop Color="#FFFBFBFB" Offset="1"/>
                     </RadialGradientBrush>
                 </Ellipse.Fill>
             </Ellipse>
-
+            <Ellipse x:Name="Indicator" Height="{Binding IndicatorDiameter, ElementName=_this}" Width="{Binding IndicatorDiameter, ElementName=_this}" HorizontalAlignment="Left" VerticalAlignment="Top" Fill="#FFEC6B00"
+                     Margin="{Binding Location, ElementName=_this}"/>
+            <TextBlock x:Name="txt_deneme" Width="60" Height="16"  Margin="71,0,0,10" TextWrapping="Wrap" 
+                       HorizontalAlignment="Left" VerticalAlignment="Bottom" TextAlignment="Center"
+                       Text="{Binding Label,ElementName=_this,FallbackValue='0'}"/>
         </Grid>
     </Viewbox>
     

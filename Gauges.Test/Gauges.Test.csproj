@@ -93,5 +93,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gauges.Polar\Gauges.Polar.csproj">
+      <Project>{2889a974-7de8-4804-84f9-99793308638a}</Project>
+      <Name>Gauges.Polar</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
