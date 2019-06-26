@@ -6,11 +6,35 @@
         xmlns:local="clr-namespace:Gauges.Test"
         xmlns:Polar="clr-namespace:Gauges.Polar;assembly=Gauges.Polar" x:Class="Gauges.Test.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="690">
+        Title="MainWindow" Height="496" Width="690">
     <Grid Background="#FFC9C0C0">
-        <Polar:GaugePolar Margin="157,10,161,90" Angle="{Binding Value, ElementName=sliderAngle}" Division="11" Label="54" Radius="{Binding Value, ElementName=sliderRadius}"   />
-        <Slider x:Name="sliderAngle" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="101,325,0,0" Maximum="360" Width="448" Value="-2"/>
-        <Slider x:Name="sliderRadius" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="101,358,0,0" Maximum="100" Width="448"/>
+        <Slider x:Name="sliderAngle" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,348,0,0" Maximum="360" Width="389" 
+                Value="360"/>
+        <Slider x:Name="sliderRadius" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,389,0,0" Maximum="100" Width="389" 
+                Value="10"/>
+        <Slider x:Name="sliderRadarAngle" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,437,0,0" Maximum="360" Width="389" Value="39"/>
+        <Polar:GaugePolar HorizontalAlignment="Left" Height="320" VerticalAlignment="Top" Width="324" 
+                          Angle="{Binding Value,ElementName=sliderAngle}"
+                          Radius="{Binding Value,ElementName=sliderRadius}"
+                          RadarAngle="{Binding Value,ElementName=sliderRadarAngle}"
+                          Division="7" BorderColor="#FFEA0000" DivisionStrokeColor="#FFD6D6D6" YAxisLineColor="#FF3DDE3D" ActiveRegionRadius="81.0" ActiveRegionColor="#7C049304" RadarLineColor="{x:Null}" XAxisLineColor="#FF3DDE3D" >
+            <Polar:GaugePolar.IndicatorColor>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFFFFCB3"/>
+                    <GradientStop Color="#FF930000" Offset="1"/>
+                </RadialGradientBrush>
+            </Polar:GaugePolar.IndicatorColor>
+            <Polar:GaugePolar.BackgroundColor>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFACACAC" Offset="1"/>
+                    <GradientStop Color="#FFE2E2E2"/>
+                </RadialGradientBrush>
+            </Polar:GaugePolar.BackgroundColor>
+        </Polar:GaugePolar>
+        <Label Content="Indicator Angle" HorizontalAlignment="Left" Margin="30,340,0,0" VerticalAlignment="Top"/>
+        <Label Content="Indicator Radius" HorizontalAlignment="Left" Margin="30,381,0,0" VerticalAlignment="Top"/>
+        <Label Content="Radar Radius" HorizontalAlignment="Left" Margin="30,429,0,0" VerticalAlignment="Top"/>
+
 
     </Grid>
 </Window>
