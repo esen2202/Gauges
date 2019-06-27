@@ -6,18 +6,20 @@
         xmlns:local="clr-namespace:Gauges.Test"
         xmlns:Polar="clr-namespace:Gauges.Polar;assembly=Gauges.Polar" x:Class="Gauges.Test.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="496" Width="690">
+        Title="MainWindow" Height="496" Width="714">
     <Grid Background="#FFC9C0C0">
         <Slider x:Name="sliderAngle" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,348,0,0" Maximum="360" Width="389" 
                 Value="360"/>
         <Slider x:Name="sliderRadius" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,389,0,0" Maximum="100" Width="389" 
                 Value="10"/>
-        <Slider x:Name="sliderRadarAngle" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,437,0,0" Maximum="360" Width="389" Value="39"/>
-        <Polar:GaugePolar HorizontalAlignment="Left" Height="320" VerticalAlignment="Top" Width="324" 
+        <Slider x:Name="sliderRadarAngle" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,437,0,0" Maximum="360" Width="389" 
+                Value="0"/>
+
+        <Polar:GaugePolar x:Name="GaugePolar1" HorizontalAlignment="Left" Height="340" VerticalAlignment="Top" Width="334" 
                           Angle="{Binding Value,ElementName=sliderAngle}"
                           Radius="{Binding Value,ElementName=sliderRadius}"
                           RadarAngle="{Binding Value,ElementName=sliderRadarAngle}"
-                          Division="7" BorderColor="#FFEA0000" DivisionStrokeColor="#FFD6D6D6" YAxisLineColor="#FF3DDE3D" ActiveRegionRadius="81.0" ActiveRegionColor="#7C049304" RadarLineColor="{x:Null}" XAxisLineColor="#FF3DDE3D" >
+                          Division="7" BorderColor="#FFEA0000" DivisionStrokeColor="#FFD6D6D6" YAxisLineColor="#FF3DDE3D" ActiveRegionRadius="81.0" ActiveRegionColor="#7C049304" XAxisLineColor="#FF3DDE3D" RenderTransformOrigin="0.911,0.508" Margin="10,8,0,0" RadarLineColor="#FF51FF00" Label="esen" >
             <Polar:GaugePolar.IndicatorColor>
                 <RadialGradientBrush>
                     <GradientStop Color="#FFFFFCB3"/>
@@ -31,10 +33,29 @@
                 </RadialGradientBrush>
             </Polar:GaugePolar.BackgroundColor>
         </Polar:GaugePolar>
+        <Polar:GaugePolar x:Name="GaugePolar2" HorizontalAlignment="Left" Height="340" VerticalAlignment="Top" Width="334" 
+            Angle="{Binding Value, ElementName=sliderAngle}"
+            Radius="{Binding Value, ElementName=sliderRadius}"
+            RadarAngle="{Binding Value, ElementName=sliderRadarAngle}" BorderColor="Black" DivisionStrokeColor="#FFFF5454" YAxisLineColor="#FF807B7B" ActiveRegionRadius="50" ActiveRegionColor="White" XAxisLineColor="#FFA69292" RenderTransformOrigin="0.911,0.508" Margin="362,8,0,0" RadarLineStrokeThickness="2" Division="4" RadarLineColor="Black" Label="esen" >
+            <Polar:GaugePolar.IndicatorColor>
+                <RadialGradientBrush>
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </RadialGradientBrush>
+            </Polar:GaugePolar.IndicatorColor>
+            <Polar:GaugePolar.BackgroundColor>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF782020" Offset="1"/>
+                    <GradientStop Color="Red"/>
+                </RadialGradientBrush>
+            </Polar:GaugePolar.BackgroundColor>
+        </Polar:GaugePolar>
+
         <Label Content="Indicator Angle" HorizontalAlignment="Left" Margin="30,340,0,0" VerticalAlignment="Top"/>
         <Label Content="Indicator Radius" HorizontalAlignment="Left" Margin="30,381,0,0" VerticalAlignment="Top"/>
         <Label Content="Radar Radius" HorizontalAlignment="Left" Margin="30,429,0,0" VerticalAlignment="Top"/>
-
+        <Button  x:Name="BtnStartRadar" Content="Start Radar" HorizontalAlignment="Left" Height="41" Margin="563,356,0,0" VerticalAlignment="Top" Width="110" Click="BtnStartRadar_Click"/>
+        <Button  x:Name="BtnStopRadar" Content="Stop Radar" HorizontalAlignment="Left" Height="41" Margin="563,397,0,0" VerticalAlignment="Top" Width="110" Click="BtnStopRadar_Click" />
 
     </Grid>
 </Window>
