@@ -15,14 +15,16 @@
             Name="BoardTable"
             Width="595"
             Height="350"
-            Margin="20,64,0,0"
+            Margin="5,39,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             BoardBackgroundColor="{x:Null}" />
         <Button
             Width="100"
             Height="30"
-            Margin="20,24,680,380"
+            Margin="5,4,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
             Click="Button_Click"
             Content="Change" />
     </Grid>

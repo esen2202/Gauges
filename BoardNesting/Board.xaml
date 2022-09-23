@@ -8,7 +8,6 @@
     Name="_this"
     d:DesignHeight="450"
     d:DesignWidth="465"
-    Background="#FFDA0000"
     mc:Ignorable="d">
     <Grid>
         <Viewbox

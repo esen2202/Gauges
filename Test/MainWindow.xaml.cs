@@ -29,7 +29,7 @@ namespace Test
         {
             if (BoardTable.Data != null)
             {
-                BoardTable.Selection(sel, 3);
+                BoardTable.Selection(sel, 4);
                 if (sel < BoardTable.Data.Pieces.Count() - 1)
                 {
                     sel++;

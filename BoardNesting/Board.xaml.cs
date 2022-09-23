@@ -122,7 +122,7 @@ namespace BoardNesting
             }
         }
 
-        public void Selection(int id, int length, bool end = true)
+        public void Selection(int id, int length, bool end = false)
         {
             var piece = Data.Pieces.Where(o => o.Id == id).FirstOrDefault();
             if (piece != null)
