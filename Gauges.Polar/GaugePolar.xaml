@@ -1,46 +1,78 @@
-﻿<UserControl x:Class="Gauges.Polar.GaugePolar"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Gauges.Polar"
-             mc:Ignorable="d" 
-             x:Name="_this"
-             d:DesignHeight="450" d:DesignWidth="450">
+﻿<UserControl
+    x:Class="Gauges.Polar.GaugePolar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Gauges.Polar"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="_this"
+    d:DesignHeight="450"
+    d:DesignWidth="450"
+    mc:Ignorable="d">
     <Viewbox x:Name="ViewBoxMain" Stretch="Uniform">
-        <Grid x:Name="GridMain" Width="200" Height="200" Margin="5">
+        <Grid
+            x:Name="GridMain"
+            Width="200"
+            Height="200"
+            Margin="5">
 
-            <Ellipse x:Name="EllipseBase"   
-                     Fill="{Binding BackgroundColor,ElementName=_this}" 
-                     Stroke="{Binding BorderColor,ElementName=_this}"/>
+            <Ellipse
+                x:Name="EllipseBase"
+                Fill="{Binding BackgroundColor, ElementName=_this}"
+                Stroke="{Binding BorderColor, ElementName=_this}" />
 
-            <Ellipse x:Name="EllipseActiveRegion" Height="{Binding ActiveRegionRadius, ElementName=_this}" Width="{Binding ActiveRegionRadius, ElementName=_this}"
-                     Fill="{Binding ActiveRegionColor,ElementName=_this}" />
+            <Ellipse
+                x:Name="EllipseActiveRegion"
+                Width="{Binding ActiveRegionRadius, ElementName=_this}"
+                Height="{Binding ActiveRegionRadius, ElementName=_this}"
+                Fill="{Binding ActiveRegionColor, ElementName=_this}" />
 
-            <TextBlock x:Name="txt_deneme" Width="60" Height="16"  Margin="71,0,0,10" TextWrapping="Wrap" 
-                       HorizontalAlignment="Left" VerticalAlignment="Bottom" TextAlignment="Center"
-                       Text="{Binding Label, ElementName=_this}"/>
+            <TextBlock
+                x:Name="txt_deneme"
+                Width="60"
+                Height="16"
+                Margin="71,0,0,10"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Text="{Binding Label, ElementName=_this}"
+                TextAlignment="Center"
+                TextWrapping="Wrap" />
 
-            <Grid x:Name="GridDrawing" />
-            <Line x:Name="LineYAxis"
-                X1="100" Y1="0"  
-                X2="100" Y2="200"  
-                Stroke="{Binding YAxisLineColor,ElementName=_this}" StrokeThickness="1" />
-            <Line x:Name="LineXAxis"
-                X1="0" Y1="100"  
-                X2="200" Y2="100"  
-                Stroke="{Binding XAxisLineColor,ElementName=_this}" StrokeThickness="1" />
+            <Grid x:Name="GridDrawing"/>
+            <Line
+                x:Name="LineYAxis"
+                Stroke="{Binding YAxisLineColor, ElementName=_this}"
+                StrokeThickness="1"
+                X1="100"
+                X2="100"
+                Y1="0"
+                Y2="200" />
+            <Line
+                x:Name="LineXAxis"
+                Stroke="{Binding XAxisLineColor, ElementName=_this}"
+                StrokeThickness="1"
+                X1="0"
+                X2="200"
+                Y1="100"
+                Y2="100" />
 
-            <Line x:Name="LineRadar"
-                X1="100" Y1="100"  
-                X2="{Binding RadarX,ElementName=_this}" 
-                Y2="{Binding RadarY,ElementName=_this}"  
-                Stroke="{Binding RadarLineColor,ElementName=_this,FallbackValue=#2F32F2}" 
-                  StrokeThickness="{Binding RadarLineStrokeThickness,ElementName=_this}" />
+            <Line
+                x:Name="LineRadar"
+                Stroke="{Binding RadarLineColor, ElementName=_this, FallbackValue=#2F32F2}"
+                StrokeThickness="{Binding RadarLineStrokeThickness, ElementName=_this}"
+                X1="100"
+                X2="{Binding RadarX, ElementName=_this}"
+                Y1="100"
+                Y2="{Binding RadarY, ElementName=_this}" />
 
-            <Ellipse x:Name="Indicator" Height="{Binding IndicatorDiameter, ElementName=_this}" Width="{Binding IndicatorDiameter, ElementName=_this}" HorizontalAlignment="Left" VerticalAlignment="Top" 
-                     Fill="{Binding IndicatorColor,ElementName=_this}"
-                     Margin="{Binding Location, ElementName=_this}"/>
+            <Ellipse
+                x:Name="Indicator"
+                Width="{Binding IndicatorDiameter, ElementName=_this}"
+                Height="{Binding IndicatorDiameter, ElementName=_this}"
+                Margin="{Binding Location, ElementName=_this}"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Fill="{Binding IndicatorColor, ElementName=_this}" />
         </Grid>
     </Viewbox>
 
